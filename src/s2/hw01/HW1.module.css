@@ -1,0 +1,14 @@
+.hw1 {
+	padding: 0 40px;
+}
+@media screen and (max-width: 576px) {
+	.hw1 {
+		padding: 0 10px;
+	}
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	justify-content: space-between;
+}
