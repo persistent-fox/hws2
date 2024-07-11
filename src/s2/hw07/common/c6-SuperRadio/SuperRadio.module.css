@@ -4,12 +4,26 @@
 .radio::before {
 }
 
-
 .radio:checked::before {
 }
 
 .label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
 }
 
 .options {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 20px;
 }
