@@ -3,6 +3,7 @@ import s from './App.module.css';
 import HW5 from '../s2/hw05/HW5';
 import HW6 from '../s2/hw06/HW6';
 import HW7 from '../s2/hw07/HW7';
+import HW8 from '../s2/hw08/HW8';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<HW5 />
 			<HW6 />
 			<HW7 />
+			<HW8 />
 		</div>
 	);
 }
