@@ -5,7 +5,7 @@ import s from './Clock.module.css';
 
 function Clock() {
 	const [timerId, setTimerId] = useState<NodeJS.Timer | undefined>(undefined);
-	// for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
+
 	const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())));
 	const [show, setShow] = useState<boolean>(false);
 
@@ -14,12 +14,9 @@ function Clock() {
 			setDate(new Date(restoreState('hw9-date', Date.now())));
 		}, 1000);
 		setTimerId(idInt);
-		// пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
-		// сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
 	};
 
 	const stop = () => {
-		// пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
 		setTimerId(undefined);
 		clearInterval(timerId);
 	};
@@ -31,13 +28,13 @@ function Clock() {
 		setShow(false);
 	};
 
-	const dateFormatter = new Intl.DateTimeFormat(navigator.language, {
+	const dateFormatter = new Intl.DateTimeFormat('ru', {
 		day: '2-digit',
 		year: 'numeric',
 		month: '2-digit',
 	});
 
-	const timeFormatter = new Intl.DateTimeFormat(navigator.language, {
+	const timeFormatter = new Intl.DateTimeFormat('ru', {
 		hour: '2-digit',
 		minute: '2-digit',
 		second: '2-digit',
@@ -82,18 +79,10 @@ function Clock() {
 			</div>
 
 			<div className={s.buttonsContainer}>
-				<SuperButton
-					id={'hw9-button-start'}
-					disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
-					onClick={start}
-				>
+				<SuperButton id={'hw9-button-start'} disabled={!!timerId} onClick={start}>
 					start
 				</SuperButton>
-				<SuperButton
-					id={'hw9-button-stop'}
-					disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
-					onClick={stop}
-				>
+				<SuperButton id={'hw9-button-stop'} disabled={!timerId} onClick={stop}>
 					stop
 				</SuperButton>
 			</div>

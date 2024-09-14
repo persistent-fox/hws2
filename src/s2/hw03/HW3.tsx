@@ -42,9 +42,8 @@ const HW3 = () => {
 
 	return (
 		<div id={'hw3'}>
-			<div className={s2.hwTitle}>
-				<span>Homework #3</span>
-			</div>
+			<div className={s2.hwTitle}>Homework #3</div>
+			<div className={s2.divider}></div>
 
 			<div className={s2.hw}>
 				<GreetingContainer users={users} addUserCallback={addUserCallback} />
