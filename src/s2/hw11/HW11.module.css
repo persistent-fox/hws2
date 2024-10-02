@@ -1,8 +1,19 @@
 .container {
+	max-width: 440px;
+	width: 100%;
+	padding: 0 70px;
 }
 
 .wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .number {
+	color: #000;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
 }
