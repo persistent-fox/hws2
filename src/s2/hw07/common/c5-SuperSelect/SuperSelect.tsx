@@ -1,10 +1,11 @@
-import React, { SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent } from 'react';
-import s from './SuperSelect.module.css';
+import React, { SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent } from "react";
+import s from "./SuperSelect.module.css";
+import { TTheme } from "../../../hw12/HW12";
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-	options?: any[];
+	options?: TTheme[];
 	onChangeOption?: (option: number) => void;
 };
 
@@ -15,9 +16,9 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 	onChangeOption,
 	...restProps
 }) => {
-	const mappedOptions: any[] = options
+	const mappedOptions: JSX.Element[] = options
 		? options.map(o => (
-				<option id={'hw7-option-' + o.id} className={s.option} key={o.id} value={o.id}>
+				<option id={"hw7-option-" + o.id} className={s.option} key={o.id} value={o.id}>
 					{o.value}
 				</option>
 		  ))
@@ -28,7 +29,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 		onChangeOption && onChangeOption(+e.currentTarget.value);
 	};
 
-	const finalSelectClassName = s.select + (className ? ' ' + className : '');
+	const finalSelectClassName = s.select + (className ? " " + className : "");
 
 	return (
 		<select className={finalSelectClassName} onChange={onChangeCallback} {...restProps}>
