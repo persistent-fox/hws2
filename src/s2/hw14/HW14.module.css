@@ -1,7 +1,20 @@
-.tech {
+.wrapper {
+	padding: 0 70px;
+	margin-top: 30px;
+}
 
+.tech {
+	color: #000;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 .loading {
-
+	max-width: 212px;
+	width: 100%;
+	text-align: end;
+	color: #4d4d4d;
+	font-size: 14px;
+	font-weight: 300;
 }
